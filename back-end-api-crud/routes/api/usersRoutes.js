@@ -1,5 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
+import * as userController from '../../controllers/users.js'
 
 // define router
 const router = express.Router()
@@ -19,8 +20,9 @@ const users = [
 ];
 
 // get request
-router.get('/', (req,res)=>{
-    res.send(users)
-})
+// to display when the /users is hit
+router.get('/', userController.index)
+// to display when the /users/listAll
+router.get("/list", userController.listAll);
 
 export default router;
