@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 import './config/db.js';
 
 // importing routes for users from usersRoutes
-import userRouter from "./routes/usersRoutes.js";
+import userRouter from "./routes/api/usersRoutes.js";
 
 const app = express();
 // defining port for backend rest server
