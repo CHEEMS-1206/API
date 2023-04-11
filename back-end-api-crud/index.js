@@ -1,15 +1,19 @@
 import express from 'express'
 import bodyParser from 'body-parser'
+
+// importing env and using env in index.js
 import dotenv from 'dotenv'
 dotenv.config()
+
+// connection to database
 import mongoose from 'mongoose'
 mongoose
   .connect(
-    "mongodb+srv://SENTY456:SENTY456@cluster0.msfx7s4.mongodb.net/?retryWrites=true&w=majority",
+    process.env.DB_URL,
     {
-      dbName: "api-crud-cwc-db",
-      user: "SENTY456",
-      pass: "SENTY456",
+      dbName: process.env.DB_NAME,
+      user: process.env.DB_USERNAME,
+      pass: process.env.DB_PASS,
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }
