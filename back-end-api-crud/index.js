@@ -1,5 +1,25 @@
 import express from 'express'
 import bodyParser from 'body-parser'
+import dotenv from 'dotenv'
+dotenv.config()
+import mongoose from 'mongoose'
+mongoose
+  .connect(
+    "mongodb+srv://SENTY456:SENTY456@cluster0.msfx7s4.mongodb.net/?retryWrites=true&w=majority",
+    {
+      dbName: "api-crud-cwc-db",
+      user: "SENTY456",
+      pass: "SENTY456",
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => {
+    console.log("Db connected !");
+  })
+  .catch((e) => {
+    console.log(e);
+  });
 
 // importing routes for users from usersRoutes
 import userRouter from './routes/usersRoutes.js'
