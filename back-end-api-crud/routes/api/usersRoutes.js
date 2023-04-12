@@ -25,4 +25,8 @@ router.get('/', userController.index)
 // to display when the /users/listAll
 router.get("/list", userController.listAll);
 
+// CRUD 
+//Create new users 
+router.post('/',userController.createUser);
+
 export default router;
