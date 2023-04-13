@@ -32,4 +32,7 @@ router.get("/list", userController.listAll);
 //Read single user
 router.get('/:id', userController.getUser);
 
+//Update user
+router.patch('/:id',userController.updateUser);
+
 export default router;
