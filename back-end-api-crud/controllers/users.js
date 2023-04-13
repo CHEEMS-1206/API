@@ -28,7 +28,7 @@ export const listAll = async (req, res) => {
     if (query) {
       res.status(200).json(query);
     } else {
-      res.status(400).json({msg : "No user here !"});
+      res.status(400).json({ msg: "No user here !" });
     }
   } catch (err) {
     res.status(400).json({ msg: err });
@@ -39,6 +39,28 @@ export const listAll = async (req, res) => {
 export const getUser = async (req, res) => {
   try {
     const query = await userModel.findById(req.params.id);
+    if (!query) {
+      res.status(400).json({ msg: "Invalid user request !!" });
+    } else {
+      res.status(200).json(query);
+    }
+  } catch (err) {
+    res.status(400).json({ msg: err });
+  }
+};
+
+// controller for updating a particular user details
+export const updateUser = async (req, res) => {
+  try {
+    const query = await userModel.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: req.body,
+      },
+      {
+        new: true,
+      }
+    );
     if (!query) {
       res.status(400).json({ msg: "Invalid user request !!" });
     } else {
