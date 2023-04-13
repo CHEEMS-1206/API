@@ -70,3 +70,17 @@ export const updateUser = async (req, res) => {
     res.status(400).json({ msg: err });
   }
 };
+
+// controller for deleting a particular user from the database
+export const deleteUser = async (req, res) => {
+  try {
+    const query = await userModel.findByIdAndDelete(req.params.id);
+    if (!query) {
+      res.status(400).json({ msg: "Invalid user request !!" });
+    } else {
+      res.status(200).json(query);
+    }
+  } catch (err) {
+    res.status(400).json({ msg: err });
+  }
+};
