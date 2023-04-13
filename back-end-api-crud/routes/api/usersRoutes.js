@@ -19,14 +19,17 @@ const users = [
   },
 ];
 
-// get request
-// to display when the /users is hit
-router.get('/', userController.index)
-// to display when the /users/listAll
-router.get("/list", userController.listAll);
+// route for hitting /users
+router.get('/',userController.home);
 
 // CRUD 
 //Create new users 
 router.post('/',userController.createUser);
+
+//Read users
+//Read all users
+router.get("/list", userController.listAll);
+//Read single user
+router.get('/:id', userController.getUser);
 
 export default router;
