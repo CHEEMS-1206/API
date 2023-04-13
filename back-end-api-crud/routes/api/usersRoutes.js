@@ -23,6 +23,7 @@ const users = [
 router.get('/',userController.home);
 
 // CRUD 
+
 //Create new users 
 router.post('/',userController.createUser);
 
@@ -34,5 +35,8 @@ router.get('/:id', userController.getUser);
 
 //Update user
 router.patch('/:id',userController.updateUser);
+
+//Delete users
+router.delete('/:id',userController.deleteUser);
 
 export default router;
