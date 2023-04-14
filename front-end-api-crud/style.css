@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* overall container having user and button both  */
+#main {
+  padding: 100px 20px;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 200px);
+  width: calc(100% - 40px);
+  background-color: rgb(94, 94, 175);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* style for the container of all users  */
+#container {
+  margin-top: 30px;
+}
+
+/* style for the button  */
+#fetchBtn {
+  padding: 12px 16px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+.user {
+  margin-bottom: 25px;
+}
+.user h2 {
+  color: black;
+  font-size: 30px;
+  font-weight: 600;
+  font-style: italic;
+  text-transform: capitalize;
+}
